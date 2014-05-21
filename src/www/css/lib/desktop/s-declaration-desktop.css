@@ -1,20 +1,20 @@
-body.declaration {background: #ffffff;}
+body.declaration {background: #e8e8e8;}
 body.declaration #header {display: none;}
 
 
-body.declaration #content .scene {width: 737px; padding: 50px 0 70px; margin: 0 auto; position: relative;}
+body.declaration #content .scene {width: 737px; padding: 50px 20px 70px; margin: 0 auto; position: relative; background: #ffffff;}
 
 /* INTRO TEXT */
-body.declaration #content .scene h1 {padding: 0 0 10px; font-size: 20px;
-	font-family: 'HelveticaNeueW01-77BdCn 692722',Arial,sans-serif; text-transform: uppercase;
+body.declaration #content .scene h1 {padding: 0 0 10px; font-size: 20px; text-align: center;
+	font-family: Arial,sans-serif; text-transform: uppercase;
 
 }
-body.declaration #content .scene h2 {padding: 0 0 10px; font-size: 20px;
-	font-family: 'HelveticaNeueW01-77BdCn 692722',Arial,sans-serif; text-transform: uppercase;
+body.declaration #content .scene h2 {padding: 0 0 10px; font-size: 20px; text-align: center;
+	font-family: Arial,sans-serif; text-transform: uppercase;
 }
 
 body.declaration #content .scene .vcard {font-size: 0; padding: 0 0 30px; text-align: center;}
-body.declaration #content .scene .vcard .name {font-size: 58px; padding: 0 0 6px;}
+body.declaration #content .scene .vcard .name {font-size: 48px; padding: 0 0 6px; font-weight: bold;}
 body.declaration #content .scene .vcard .po-box,
 body.declaration #content .scene .vcard .postallocality,
 body.declaration #content .scene .vcard .url,
@@ -62,16 +62,16 @@ body.declaration #content .scene input {border-radius: 0;
 	-webkit-appearance: none;
 	-moz-appearance: textfield;
 }
-body.declaration #content .scene .actions input {border: none; background: #000000; color: #ffffff; padding: 5px 20px; line-height: 20px; cursor: pointer;
-	font-family: 'HelveticaNeueW01-77BdCn 692722',Arial,sans-serif; text-transform: uppercase;
+body.declaration #content .scene .actions input {border: none; background: #000000; color: #00ff00; padding: 7px 20px; line-height: 20px; cursor: pointer;
+	font-family: Arial,sans-serif; text-transform: uppercase; text-align: center; font-weight: bold;
 }
-body.declaration #content .scene .back {position: relative; z-index:100; top: -30px; background: #000000; color: #ffffff; padding: 6px 20px; font-size: 14px; display: inline-block; cursor: pointer;
-	font-family: 'HelveticaNeueW01-77BdCn 692722',Arial,sans-serif; text-transform: uppercase;
+body.declaration #content .scene .back {position: relative; z-index:100; top: -30px; background: #000000; color: #00ff00; padding: 8px 20px; font-size: 14px; display: inline-block; cursor: pointer;
+	font-family: Arial,sans-serif; text-transform: uppercase; font-weight: bold;
 }
 
 
 /* DATA FORM */
-body.declaration #content .scene.dataform h1 {padding: 0 0 20px; font-size: 40px;}
+body.declaration #content .scene.dataform h1 {padding: 0 0 20px; font-size: 40px; text-align: center; font-weight: bold;}
 #content .scene.dataform p {padding: 0 0 30px; text-align: center; font-size: 16px;}
 #content .scene.dataform .field {padding: 0 0 15px; font-size: 0;}
 #content .scene.dataform .field span {font-size: 14px; padding: 2px 0 0; width: 12px; display: inline-block; vertical-align: top; text-align: center;}
@@ -91,14 +91,14 @@ body.declaration #content .scene.dataform h1 {padding: 0 0 20px; font-size: 40px
 #content .scene.dataform .field.postalcity input.city {width: 180px;}
 
 #content .scene.dataform .actions {padding: 15px 0 0 328px;}
-#content .scene.dataform .actions input {width: 100px;}
+#content .scene.dataform .actions input {width: 120px;}
 
 
 /* SIGNING PAGE */
 body.declaration #content .scene.signature {padding-bottom: 40px;}
 #content .scene.signature div.signatureform {height: 201px;}
 #content .scene.signature p {padding: 0 0 30px; font-size: 13px; text-align: center;}
-body.declaration #content .scene ul.actions li.reset {background: #000000; color: #ffffff; padding: 8px 20px; font-size: 14px; display: inline-block; cursor: pointer; font-family: 'HelveticaNeueW01-77BdCn 692722',Arial,sans-serif; text-transform: uppercase; margin-right: 10px;}
+body.declaration #content .scene ul.actions li.reset {background: #000000; color: #00ff00; padding: 10px 20px; font-size: 14px; display: inline-block; cursor: pointer; font-family: Arial,sans-serif; text-transform: uppercase; font-weight:bold; margin-right: 10px;}
 
 /* ACTIVE INPUT CANVAS */
 #content .scene.signature div.input {padding: 0 0 30px; display: none; position: relative;}
