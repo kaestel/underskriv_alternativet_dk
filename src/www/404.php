@@ -33,7 +33,7 @@ else {
 	include_once($_SERVER["FRAMEWORK_PATH"]."/config/init.php");
 
 	$page->bodyClass("error");
-	$page->pageTitle("dukkepartiet.dk - 404");
+	$page->pageTitle("underskriv.alternativet.dk - 404");
 
 
 	$page->header();

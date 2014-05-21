@@ -8,6 +8,6 @@ $declaration_id = $_GET["id"];
 	<p>Vi har nu modtaget din underskrevne vælgererklæring</p>
 
 	<p class="regards">Med venlig hilsen</p>
-	<h2>Dukkepartiet</h2>
+	<h2>Alternativet</h2>
 
 </div>
