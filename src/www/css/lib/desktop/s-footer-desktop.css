@@ -1,12 +1,12 @@
 
-#footer { background:#ffffff; width: 737px; padding: 50px 20px 70px; margin: 20px auto;}
+#footer { background:#ffffff; width: 737px; padding: 40px 20px 40px; margin: 20px auto;}
 #footer .social {display: none;}
 
 #footer .about {width:740px; margin:0 auto;}
 #footer .about p {text-align: center; color: #ffffff; font-size: 26px; font-family: Arial, sans-serif; font-weight: bold; font-style:italic;}
 #footer .about ul.contacts {display:block; width:100%; font-size: 1rem; }
-#footer .about ul.contacts li.contact {text-align:center; margin:50px auto 0; width:100%;}
-#footer .about ul.contacts li.contact * {color: #888888;}
+#footer .about ul.contacts li.contact {text-align:center; width:200px; margin:20px 40px;}
+#footer .about ul.contacts li.contact * {color: #000000;}
 #footer .about ul.contacts li.contact .press {}
 #footer .about ul.contacts li.contact h4 {padding-bottom: 4px;}
 #footer .about ul.contacts li.contact h5 {padding-bottom: 24px; font-size:20px; text-transform: uppercase; font-family:Arial, sans-serif; font-weight: bold;}
