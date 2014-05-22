@@ -312,12 +312,12 @@ Util.Objects["signature"] = new function() {
 				// u.xInObject(this.scene.canvas_date.paths.paths);
 
 				// make sure both fields have been updated
-				if(this.scene.canvas_date.paths.paths.length < 40) {
+				if(this.scene.canvas_date.paths.paths.length < 20) {
 					this.value = "Godkend";
 
 					this.scene.canvas_date.clicked();
 				}
-				else if(this.scene.canvas_signature.paths.paths.length < 40) {
+				else if(this.scene.canvas_signature.paths.paths.length < 20) {
 					this.value = "Godkend";
 
 					this.scene.canvas_signature.clicked();
