@@ -3769,11 +3769,11 @@ Util.Objects["signature"] = new function() {
 			this.bn_preview.scene = this;
 			this.bn_preview.onclick = function(event) {
 				u.e.kill(event);
-				if(this.scene.canvas_date.paths.paths.length < 10) {
+				if(this.scene.canvas_date.paths.paths.length < 40) {
 					this.value = "Godkend";
 					this.scene.canvas_date.clicked();
 				}
-				else if(this.scene.canvas_signature.paths.paths.length < 10) {
+				else if(this.scene.canvas_signature.paths.paths.length < 40) {
 					this.value = "Godkend";
 					this.scene.canvas_signature.clicked();
 				}
