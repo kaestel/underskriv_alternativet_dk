@@ -159,13 +159,17 @@ body.declaration #content .scene .vcard .name {font-size: 48px; padding: 0 0 6px
 body.declaration #content .scene .vcard .po-box,
 body.declaration #content .scene .vcard .postallocality,
 body.declaration #content .scene .vcard .url,
-body.declaration #content .scene .vcard .email {font-size: 13px;}
+body.declaration #content .scene .vcard .email,
+body.declaration #content .scene .vcard .telephone {font-size: 13px;}
 body.declaration #content .scene .vcard .po-box:after {content: ",\00a0";}
 body.declaration #content .scene .vcard .url:after {content: "\00a0-\00a0";}
+body.declaration #content .scene .vcard .email:after {content: "\00a0-\00a0";}
 body.declaration #content .scene .vcard .po-box,
 body.declaration #content .scene .vcard .postallocality,
 body.declaration #content .scene .vcard .url,
-body.declaration #content .scene .vcard .email {display: inline-block; vertical-align: top;}
+body.declaration #content .scene .vcard .email,
+body.declaration #content .scene .vcard .telephone {display: inline-block; vertical-align: top;}
+body.declaration #content .scene .vcard .telephone {padding-left:6px;}
 body.declaration #content .scene div.signatureform {width: 737px; overflow: hidden; position: relative; padding: 0 0 30px; background: transparent url(/img/bg_standardvaelgererklaering_userform.png) no-repeat left top;}
 body.declaration #content .scene div.signatureform * {font-size: 12px;}
 body.declaration #content .scene div.signatureform div {position: absolute; overflow: hidden;}
@@ -238,9 +242,12 @@ body.declaration #content .scene.preview {padding-bottom: 40px;}
 #content .scene.preview div.signatureform {height: 400px;}
 #content .scene.preview ul.actions {padding: 0; text-align: right;}
 #content .scene.receipt {width: 737px; margin: 0 auto; position: relative; padding: 50px 0 70px;}
-body.declaration #content .scene.receipt h1 {font-size: 40px; font-weight: bold;}
-body.declaration #content .scene.receipt p {font-size: 16px; text-align: center;}
+body.declaration #content .scene.receipt h1 {font-size: 40px; font-weight: bold; padding-bottom:20px;}
+body.declaration #content .scene.receipt p {font-size: 16px; text-align: center; padding:0 100px 20px;}
+body.declaration #content .scene.receipt p a {text-decoration: underline;}
+body.declaration #content .scene.receipt p a:hover {color: #009f00;}
 body.declaration #content .scene.receipt h2 {font-weight: bold;}
+body.declaration #content .scene.receipt h3 {font-size: 16px; text-align: center; font-weight: bold; padding-bottom: 4px;}
 body.declaration #content .scene.receipt p.regards {padding: 27px 0 9px;}
 body.declaration #content .scene.receipt .actions li a {font-size: 16px; text-decoration: underline;}
 
