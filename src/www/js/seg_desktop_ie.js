@@ -3897,6 +3897,8 @@ Util.Form.customInit["postalcity"] = function(field) {
 Util.Form.customInit["cpr"] = function(field) {
 	field._input = u.qs("input.cpr1", field);
 	field._input_cpr2 = u.qs("input.cpr2", field);
+	field._input.autocomplete = "Off";
+	field._input_cpr2.autocomplete = "Off";
 	field._input.field = field;
 	field._input_cpr2.field = field;
 	u.f.formIndex(field._input.form, field._input);
