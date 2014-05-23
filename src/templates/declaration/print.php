@@ -4,6 +4,8 @@ error_reporting(E_ALL);
 $signature_id = getVar("signature_id");
 $values = array();
 
+print "file_exists:" . PRIVATE_FILE_PATH."/declarations/".$signature_id . "::" . file_exists(PRIVATE_FILE_PATH."/declarations/".$signature_id). "<br>";
+
 $info = file(PRIVATE_FILE_PATH."/declarations/".$signature_id);
 if($info) {
 	foreach($info as $variable) {
