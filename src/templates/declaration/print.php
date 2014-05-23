@@ -1,9 +1,7 @@
 <?php
-error_reporting(E_ALL);
 
 $signature_id = getVar("signature_id");
 $values = array();
-
 
 $info = file(PRIVATE_FILE_PATH."/declarations/".$signature_id);
 if($info) {

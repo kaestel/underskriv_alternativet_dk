@@ -24,7 +24,6 @@ Util.Form.customInit["cpr"] = function(field) {
 			this.field._input_cpr2.focus();
 		}
 	}
-	
 
 	field._input_cpr2 = u.qs("input.cpr2", field);
 
