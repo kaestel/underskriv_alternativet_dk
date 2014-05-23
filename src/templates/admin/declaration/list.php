@@ -2,6 +2,7 @@
 global $fs;
 
 $declarations = $fs->files(PUBLIC_FILE_PATH."/declarations", array("allow_extension" => "pdf"));
+$declarations = arsort($declarations);
 ?>
 <div class="scene defaultList declarationList">
 	<h1>Vælgererklæringer</h1>
