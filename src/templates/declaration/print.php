@@ -15,18 +15,19 @@ if($info) {
 	}
 }
 else {
+	exit();
 
-$values["name"] = "a";
-$values["address1"] = "a";
-$values["address2"] = "a";
-$values["postal"] = "a";
-$values["city"] = "a";
-$values["municipality"] = "a";
-$values["cpr_1"] = "a";
-$values["cpr_2"] = "a";
+	$values["name"] = "a";
+	$values["address1"] = "a";
+	$values["address2"] = "a";
+	$values["postal"] = "a";
+	$values["city"] = "a";
+	$values["municipality"] = "a";
+	$values["cpr_1"] = "a";
+	$values["cpr_2"] = "a";
 
-$values["date_data"] = "a";	
-$values["signature_data"] = "a";
+	$values["date_data"] = "a";	
+	$values["signature_data"] = "a";
 
 //	exit();
 	
@@ -111,8 +112,6 @@ $signature_data  = $values["signature_data"];
 <body>
 
 <div id="page">
-
-	<?= "file_exists:" . PRIVATE_FILE_PATH."/declarations/".$signature_id . "::" . file_exists(PRIVATE_FILE_PATH."/declarations/".$signature_id). "<br>" ?>
 
 	<div class="form">
 		<div class="name"><?= $name ?></div>

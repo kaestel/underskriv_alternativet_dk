@@ -36,8 +36,6 @@ fclose($fp);
 //$host = "http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]."?";
 $host = ($_SERVER["HTTPS"] ? "https" : "http") . "://".$_SERVER["HTTP_HOST"]."/vaelgererklaering/print?signature_id=".$signature_id;
 
-print $host;
-
 $url = escapeshellarg($host);
 //$url = escapeshellarg($host . $param);
 
@@ -64,18 +62,15 @@ $command = $wkhtmltox_path." -s A4";
 // Putting together the command for `shell_exec()`
 $ex = "$command $url " . $name;
 
-print $ex."<br>";
 //print $ex;
 // Generate the image
 // NOTE: Don't forget to `escapeshellarg()` any user input!
 $output = shell_exec($ex);
 
-print $output;
-
 // delete info file
-//unlink($info_file);
-//Session::reset("signature_id");
+unlink($info_file);
+Session::reset("signature_id");
 //header("Location: /vaelgererklaering/receipt?id=$declaration_id");
-//header("Location: /vaelgererklaering/receipt");
+header("Location: /vaelgererklaering/receipt");
 exit();
 ?>
