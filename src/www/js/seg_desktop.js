@@ -3245,6 +3245,12 @@ Util.Objects["signature"] = new function() {
 			this.canvas_signature.clicked = function() {
 				u.ac(this, "selected");
 				u.rc(this.scene.canvas_date, "selected");
+				if(this.scene.canvas_date.paths.paths.length > 20) {
+					u.ac(this.scene.canvas_date, "correct");
+				}
+				else {
+					u.rc(this.scene.canvas_date, "correct");
+				}
 				this.scene.selected_input = this;
 				this.scene.createCanvasInput();
 				u.ac(this.scene.canvas_input, "signature");
@@ -3267,6 +3273,12 @@ Util.Objects["signature"] = new function() {
 			this.canvas_date.clicked = function() {
 				u.ac(this, "selected");
 				u.rc(this.scene.canvas_signature, "selected");
+				if(this.scene.canvas_signature.paths.paths.length > 20) {
+					u.ac(this.scene.canvas_signature, "correct");
+				}
+				else {
+					u.rc(this.scene.canvas_signature, "correct");
+				}
 				this.scene.selected_input = this;
 				this.scene.createCanvasInput();
 				u.ac(this.scene.canvas_input, "date");
@@ -3415,6 +3427,12 @@ Util.Objects["signature"] = new function() {
 					this.canvas_date.paths = JSON.parse(decodeURIComponent(this.canvas_date._input.value).replace(/\\/g, ""));
 					this.canvas_date._repeat();
 				}
+				if(this.canvas_signature.paths.paths.length > 20) {
+					u.ac(this.canvas_signature, "correct");
+				}
+				if(this.canvas_date.paths.paths.length > 20) {
+					u.ac(this.canvas_date, "correct");
+				}
 			}
 			if(!(this.canvas_signature._input.value && this.canvas_date._input.value)) {
 				this.bn_preview.value = "Underskriv";
@@ -3514,6 +3532,11 @@ Util.Form.customInit["postalcity"] = function(field) {
 }
 Util.Form.customInit["cpr"] = function(field) {
 	field._input = u.qs("input.cpr1", field);
+	field._input.updated = function() {
+		if(this.val().length == 6) {
+			this.field._input_cpr2.focus();
+		}
+	}
 	field._input_cpr2 = u.qs("input.cpr2", field);
 	field._input.autocomplete = "Off";
 	field._input_cpr2.autocomplete = "Off";
@@ -3553,7 +3576,7 @@ Util.Form.customValidate["postalcity"] = function(iN) {
 }
 Util.Form.customValidate["cpr"] = function(iN) {
 	if(u.hc(iN, "cpr1")) {
-		min = 0;
+		min = 10101;
 		max = 311299;
 		if(
 			!isNaN(iN.val()) && 
