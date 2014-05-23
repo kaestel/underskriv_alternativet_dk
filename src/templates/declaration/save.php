@@ -64,11 +64,13 @@ $command = $wkhtmltox_path." -s A4";
 // Putting together the command for `shell_exec()`
 $ex = "$command $url " . $name;
 
+print $ex."<br>";
 //print $ex;
 // Generate the image
 // NOTE: Don't forget to `escapeshellarg()` any user input!
 $output = shell_exec($ex);
 
+print $output;
 
 // delete info file
 //unlink($info_file);

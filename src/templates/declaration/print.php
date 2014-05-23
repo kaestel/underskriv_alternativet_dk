@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 
 $signature_id = getVar("signature_id");
 $values = array();
