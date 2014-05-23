@@ -3935,7 +3935,7 @@ Util.Form.customValidate["postalcity"] = function(iN) {
 }
 Util.Form.customValidate["cpr"] = function(iN) {
 	if(u.hc(iN, "cpr1")) {
-		min = 100000;
+		min = 0;
 		max = 311299;
 		if(
 			!isNaN(iN.val()) && 
@@ -3949,7 +3949,7 @@ Util.Form.customValidate["cpr"] = function(iN) {
 		}
 	}
 	if(u.hc(iN, "cpr2")) {
-		min = 1000;
+		min = 0;
 		max = 9999;
 		if(
 			!isNaN(iN.val()) && 
