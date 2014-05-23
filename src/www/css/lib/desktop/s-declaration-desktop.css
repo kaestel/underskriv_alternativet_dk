@@ -28,7 +28,6 @@ body.declaration #content .scene .vcard .postallocality,
 body.declaration #content .scene .vcard .url,
 body.declaration #content .scene .vcard .email,
 body.declaration #content .scene .vcard .telephone {display: inline-block; vertical-align: top;}
-body.declaration #content .scene .vcard .telephone {padding-left:6px;}
 
 
 body.declaration #content .scene div.signatureform {width: 737px; overflow: hidden; position: relative; padding: 0 0 30px; background: transparent url(/img/bg_standardvaelgererklaering_userform.png) no-repeat left top;}

@@ -9,7 +9,7 @@
 		</div>
 		<div class="url" itemprop="url">www.alternativet.dk</div>
 		<div class="email" itemprop="email"><a href="mailto:alternativet@alternativet.dk">alternativet@alternativet.dk</a></div>
-		<div class="telephone" itemprop="telephone">+45 5191 1133</div>
+		<div class="telephone" itemprop="telephone">(+45) 5191 1133</div>
 	</div>
 
 	<div class="signatureform">
