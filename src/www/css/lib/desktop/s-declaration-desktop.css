@@ -80,7 +80,7 @@ body.declaration #content .scene .back:hover {background: #00ff00; color: #00000
 
 /* DATA FORM */
 body.declaration #content .scene.dataform h1 {padding: 0 0 20px; font-size: 40px; text-align: center; font-weight: bold;}
-#content .scene.dataform p {padding: 0 0 30px; text-align: center; font-size: 16px;}
+#content .scene.dataform p {padding:0 100px 20px; text-align: center; font-size: 16px;}
 #content .scene.dataform .field {padding: 0 0 15px; font-size: 0;}
 #content .scene.dataform .field span {font-size: 14px; padding: 2px 0 0; width: 12px; display: inline-block; vertical-align: top; text-align: center;}
 #content .scene.dataform .field label {width: 265px; font-size: 14px; text-align: right; display: inline-block; vertical-align: top; padding: 2px 5px 0 0;}

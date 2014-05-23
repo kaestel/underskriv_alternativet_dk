@@ -30,10 +30,10 @@ if(!Session::value("signature_id")) {
 <div class="scene dataform i:dataform">
 
 	<h1>Vælgererklæring</h1>
-	<p>
-		Hjælp os med at opstille til folketingsvalget, ved at udfylde den digitale vælgererklæring. <br />
-		Indtast dine personlige oplysninger i formularen herunder:
-	</p>
+	<p>Hjælp Alternativet med at blive opstillingsberettiget til næste folketingsvalg!<br />
+	Udfyld vælgererklæringen og underskriv med musen eller på touch screen. Vi sender erklæringen videre ind til folkeregisteret i din kommune.</p>
+	<p>Indtast dine personlige oplysninger i formularen herunder:</p>
+
 	<form name="declaration" action="/vaelgererklaering/signature" method="post">
 		<fieldset>
 
