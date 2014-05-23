@@ -69,7 +69,7 @@ $output = shell_exec($ex);
 
 
 // delete info file
-unlink($info_file);
+//unlink($info_file);
 Session::reset("signature_id");
 header("Location: /vaelgererklaering/receipt?id=$declaration_id");
 exit();
