@@ -4,7 +4,6 @@ error_reporting(E_ALL);
 $signature_id = getVar("signature_id");
 $values = array();
 
-print "file_exists:" . PRIVATE_FILE_PATH."/declarations/".$signature_id . "::" . file_exists(PRIVATE_FILE_PATH."/declarations/".$signature_id). "<br>";
 
 $info = file(PRIVATE_FILE_PATH."/declarations/".$signature_id);
 if($info) {
@@ -113,6 +112,8 @@ $signature_data  = $values["signature_data"];
 
 <div id="page">
 
+	<?= "file_exists:" . PRIVATE_FILE_PATH."/declarations/".$signature_id . "::" . file_exists(PRIVATE_FILE_PATH."/declarations/".$signature_id). "<br>" ?>
+
 	<div class="form">
 		<div class="name"><?= $name ?></div>
 		<div class="address1"><?= $address1 ?></div>
@@ -130,6 +131,7 @@ $signature_data  = $values["signature_data"];
 			<canvas class="signature"></canvas>
 		</div>
 	</div>
+
 
 </div>
 
