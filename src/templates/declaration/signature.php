@@ -2,13 +2,14 @@
 
 	<h1>Vælgererklæring</h1>
 	<div id="vcard-alternativet" class="vcard" itemscope itemtype="http://schema.org/Organization">
-		<div class="name fn org" itemprop="name">ALTERNATIVET</div>
+		<div class="name fn org" itemprop="name">Alternativet</div>
 		<div class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 			<div class="po-box" itemprop="postOfficeBoxNumber">Under Elmene 9</div>
 			<div class="postallocality"><span class="postal-code" itemprop="postalCode">2300</span> <span class="locality" itemprop="addressLocality">København S</span></div>
 		</div>
 		<div class="url" itemprop="url">www.alternativet.dk</div>
 		<div class="email" itemprop="email"><a href="mailto:alternativet@alternativet.dk">alternativet@alternativet.dk</a></div>
+		<div class="telephone" itemprop="telephone">+45 5191 1133</div>
 	</div>
 
 	<div class="signatureform">
