@@ -31,7 +31,7 @@ if(!Session::value("signature_id")) {
 
 	<h1>Vælgererklæring</h1>
 	<p>Hjælp Alternativet med at blive opstillingsberettiget til næste folketingsvalg!<br />
-	Udfyld vælgererklæringen og underskriv med musen eller på touch screen. Vi sender erklæringen videre ind til folkeregisteret i din kommune.</p>
+	Udfyld vælgererklæringen og underskriv med musen eller på touch screen.<br />Vi sender erklæringen videre ind til folkeregisteret i din kommune.</p>
 	<p>Indtast dine personlige oplysninger i formularen herunder:</p>
 
 	<form name="declaration" action="/vaelgererklaering/signature" method="post">
