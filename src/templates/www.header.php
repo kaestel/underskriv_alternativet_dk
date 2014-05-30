@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<?= $this->language() ?>">
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<!-- (c) & (p) e-types.com, 2014 //-->
 	<!-- All material protected by copyrightlaws, as if you didnt know //-->
 	<title><?= $this->pageTitle() ?></title>
