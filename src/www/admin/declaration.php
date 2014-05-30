@@ -56,6 +56,34 @@ if(is_array($action) && count($action)) {
 	
 	}
 
+	// DOWNLOAD ITEM
+	else if(count($action) == 2 && $action[0] == "downloadAll") {
+	
+
+		$folder = PUBLIC_FILE_PATH."/declarations/";
+		$files = $fs->files($folder, array("allow_extensions" => "pdf"));
+
+		print_r($files);
+
+		// if(file_exists($file)) {
+		// 	header('Content-Description: File Transfer');
+		// 	header('Content-Type: application/octet-stream');
+		// 	header("Content-Type: application/force-download");
+		// 	header('Content-Disposition: attachment; filename=' . urlencode(basename($file)));
+		// 	header('Expires: 0');
+		// 	header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+		// 	header('Pragma: public');
+		// 	header('Content-Length: ' . filesize($file));
+		// 	ob_clean();
+		// 	flush();
+		// 	readfile($file);
+		// }
+
+//		header("Location: /admin/declaration/list");
+		exit();
+	
+	}
+
 	// DELETE ITEM
 	else if(count($action) == 2 && $action[0] == "archive") {
 	

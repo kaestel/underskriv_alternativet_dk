@@ -7,6 +7,10 @@ arsort($declarations);
 <div class="scene defaultList declarationList">
 	<h1>Vælgererklæringer</h1>
 
+	<ul class="actions">
+		<?= $HTML->link("Download and archive ALL", "/admin/declaration/downloadAll", array("class" => "button primary", "wrapper" => "li.download")) ?>
+	</ul>
+
 	<div class="all_items i:defaultList">
 <?		if($declarations): ?>
 		<ul class="items">
