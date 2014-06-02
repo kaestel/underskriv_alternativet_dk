@@ -19,6 +19,11 @@ $page->bodyClass("declaration");
 $page->pageTitle("Declarations");
 
 
+$fs->makeDirRecursively(PUBLIC_FILE_PATH."/declaration_zips");
+$fs->makeDirRecursively(PRIVATE_FILE_PATH."/declaration_archive");
+$fs->makeDirRecursively(PRIVATE_FILE_PATH."/declaration_zip_archive");
+
+
 if(is_array($action) && count($action)) {
 
 	// LIST ITEM
