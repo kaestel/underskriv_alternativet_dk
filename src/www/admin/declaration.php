@@ -57,29 +57,45 @@ if(is_array($action) && count($action)) {
 	}
 
 	// DOWNLOAD ITEM
-	else if(count($action) == 2 && $action[0] == "downloadAll") {
+	else if(count($action) == 1 && $action[0] == "downloadAll") {
 	
 
 		$folder = PUBLIC_FILE_PATH."/declarations/";
 		$files = $fs->files($folder, array("allow_extensions" => "pdf"));
 
-		print_r($files);
+		$fs->makeDirRecursively(PRIVATE_FILE_PATH."/declaration_zips");
+		$fs->makeDirRecursively(PRIVATE_FILE_PATH."/declaration_archive");
 
-		// if(file_exists($file)) {
-		// 	header('Content-Description: File Transfer');
-		// 	header('Content-Type: application/octet-stream');
-		// 	header("Content-Type: application/force-download");
-		// 	header('Content-Disposition: attachment; filename=' . urlencode(basename($file)));
-		// 	header('Expires: 0');
-		// 	header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-		// 	header('Pragma: public');
-		// 	header('Content-Length: ' . filesize($file));
-		// 	ob_clean();
-		// 	flush();
-		// 	readfile($file);
-		// }
+		$zip = new ZipArchive();
+		$zip_file = PRIVATE_FILE_PATH."/declaration_zips/bundle_".time().".zip";
+//		print $zip->open($zip_file);
+//		print $zip_file;
+		if($zip->open($zip_file, ZipArchive::CREATE)) {
+			foreach($files as $file) {
+				$zip->addFile($file, basename($file));
+			}
+		    $zip->close();
 
-//		header("Location: /admin/declaration/list");
+			// archive files
+			foreach($files as $file) {
+				copy($file, PRIVATE_FILE_PATH."/declaration_archive/".basename($file));
+				unlink($file);
+			}
+
+			header('Content-Description: File Transfer');
+			header('Content-Type: application/octet-stream');
+			header("Content-Type: application/force-download");
+			header('Content-Disposition: attachment; filename=' . urlencode(basename($zip_file)));
+			header('Expires: 0');
+			header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+			header('Pragma: public');
+			header('Content-Length: ' . filesize($zip_file));
+			ob_clean();
+			flush();
+			readfile($zip_file);
+
+		}
+
 		exit();
 	
 	}

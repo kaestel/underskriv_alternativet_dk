@@ -8,7 +8,7 @@ arsort($declarations);
 	<h1>Vælgererklæringer</h1>
 
 	<ul class="actions">
-		<?= $HTML->link("Download and archive ALL", "/admin/declaration/downloadAll", array("class" => "button primary", "wrapper" => "li.download")) ?>
+		<?= $HTML->link("Download and archive ALL", "/admin/declaration/downloadAll", array("class" => "button primary i:download", "wrapper" => "li.download", "target" => "_blank")) ?>
 	</ul>
 
 	<div class="all_items i:defaultList">
