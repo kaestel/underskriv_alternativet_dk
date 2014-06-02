@@ -172,7 +172,7 @@ if(is_array($action) && count($action)) {
 			$zip->close();
 		}
 
-
+		print "ok";
 		exit();
 	
 	}
