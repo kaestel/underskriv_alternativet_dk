@@ -21,12 +21,12 @@ arsort($declarations);
 
 				<ul class="actions">
 					<li class="delete">
-						<form action="/admin/declaration/archiveBundle/<?= $filename ?>" method="post" class="delete">
+						<form action="/janitor/declaration/archiveBundle/<?= $filename ?>" method="post" class="delete">
 							<input type="submit" value="Archive bundle" name="delete" class="delete button">
 						</form>
 					</li>
 					<li class="download">
-						<a href="/admin/declaration/downloadBundle/<?= $filename ?>" class="button">Download bundle</a>
+						<a href="/janitor/declaration/downloadBundle/<?= $filename ?>" class="button">Download bundle</a>
 					</li>
 				</ul>
 			 </li>
@@ -48,12 +48,12 @@ arsort($declarations);
 
 				<ul class="actions">
 					<li class="delete">
-						<form action="/admin/declaration/archive/<?= $filename ?>" method="post" class="delete">
+						<form action="/janitor/declaration/archive/<?= $filename ?>" method="post" class="delete">
 							<input type="submit" value="Archive" name="delete" class="delete button">
 						</form>
 					</li>
 					<li class="download">
-						<a href="/admin/declaration/download/<?= $filename ?>" class="button">Download</a>
+						<a href="/janitor/declaration/download/<?= $filename ?>" class="button">Download</a>
 					</li>
 				</ul>
 			 </li>

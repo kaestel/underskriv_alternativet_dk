@@ -4180,9 +4180,9 @@ Util.Objects["defaultList"] = new function() {
 			for(i = 0; action = node._actions[i]; i++) {
 				if(u.hc(action, "status")) {
 					if(!action.childNodes.length) {
-						form_disable = u.f.addForm(action, {"action":"/admin/cms/status/"+node._item_id+"/0", "class":"disable"});
+						form_disable = u.f.addForm(action, {"action":"/janitor/admin/items/status/"+node._item_id+"/0", "class":"disable"});
 						u.f.addAction(form_disable, {"value":"Disable", "class":"button status"});
-						form_enable = u.f.addForm(action, {"action":"/admin/cms/status/"+node._item_id+"/1", "class":"enable"});
+						form_enable = u.f.addForm(action, {"action":"/janitor/admin/items/status/"+node._item_id+"/1", "class":"enable"});
 						u.f.addAction(form_enable, {"value":"Enable", "class":"button status"});
 					}
 					else {
@@ -4216,7 +4216,7 @@ Util.Objects["defaultList"] = new function() {
 				}
 				else if(u.hc(action, "delete")) {
 					if(!action.childNodes.length) {
-						form = u.f.addForm(action, {"action":"/admin/cms/delete/"+node._item_id, "class":"delete"});
+						form = u.f.addForm(action, {"action":"/janitor/admin/items/delete/"+node._item_id, "class":"delete"});
 						form.node = node;
 						bn_delete = u.f.addAction(form, {"value":"Delete", "class":"button delete", "name":"delete"});
 					}
@@ -4327,7 +4327,7 @@ Util.Objects["defaultList"] = new function() {
 					page.notify(response.cms_message);
 				}
 			}
-			u.request(div, "/admin/cms/tags", {"callback":"tagsResponse"});
+			u.request(div, "/janitor/admin/items/tags", {"callback":"tagsResponse"});
 			div._taggableNode = function(node) {
 				u.ac(node, "addtags");
 				node._bn_add.innerHTML = "-";
@@ -4396,7 +4396,7 @@ Util.Objects["defaultList"] = new function() {
 									}
 									page.notify(response.cms_message);
 								}
-								u.request(this, "/admin/cms/tags/delete/"+this.node._item_id+"/" + this._id);
+								u.request(this, "/janitor/admin/items/tags/delete/"+this.node._item_id+"/" + this._id);
 							}
 							else {
 								this.response = function(response) {
@@ -4405,7 +4405,7 @@ Util.Objects["defaultList"] = new function() {
 									}
 									page.notify(response.cms_message);
 								}
-								u.request(this, "/admin/cms/update/"+this.node._item_id, {"method":"post", "params":"tags="+this._id});
+								u.request(this, "/janitor/admin/items/update/"+this.node._item_id, {"method":"post", "params":"tags="+this._id});
 							}
 						}
 					}
@@ -4491,9 +4491,9 @@ Util.Objects["defaultEditStatus"] = new function() {
 		var action = u.qs("li.status");
 		if(action) {
 			if(!action.childNodes.length) {
-				form_disable = u.f.addForm(action, {"action":"/admin/cms/disable/"+node._item_id, "class":"disable"});
+				form_disable = u.f.addForm(action, {"action":"/janitor/admin/items/disable/"+node._item_id, "class":"disable"});
 				u.f.addAction(form_disable, {"value":"Disable", "class":"button status"});
-				form_enable = u.f.addForm(action, {"action":"/admin/cms/enable/"+node._item_id, "class":"enable"});
+				form_enable = u.f.addForm(action, {"action":"/janitor/admin/items/enable/"+node._item_id, "class":"enable"});
 				u.f.addAction(form_enable, {"value":"Enable", "class":"button status"});
 			}
 			else {
@@ -4536,7 +4536,7 @@ Util.Objects["defaultEditActions"] = new function() {
 		var action = u.qs("li.delete");
 		if(action && cancel && cancel.href) {
 			if(!action.childNodes.length) {
-				form = u.f.addForm(action, {"action":"/admin/cms/delete/"+node._item_id, "class":"delete"});
+				form = u.f.addForm(action, {"action":"/janitor/admin/items/delete/"+node._item_id, "class":"delete"});
 				form.node = node;
 				bn_delete = u.f.addAction(form, {"value":"Delete", "class":"button delete", "name":"delete"});
 			}
@@ -4633,7 +4633,7 @@ Util.Objects["defaultTags"] = new function() {
 				page.notify(response.cms_message);
 			}
 		}
-		u.request(div._tags, "/admin/cms/tags", {"callback":"tagsResponse"});
+		u.request(div._tags, "/janitor/admin/items/tags", {"callback":"tagsResponse"});
 		div.enableTagging = function() {
 			u.bug("enable tagging")
 			if(!this._tag_options) {
@@ -4689,7 +4689,7 @@ Util.Objects["defaultTags"] = new function() {
 									}
 									page.notify(response.cms_message);
 								}
-								u.request(this, "/admin/cms/tags/delete/"+this.div.item_id+"/" + this._id);
+								u.request(this, "/janitor/admin/items/tags/delete/"+this.div.item_id+"/" + this._id);
 							}
 							else {
 								this.response = function(response) {
@@ -4698,7 +4698,7 @@ Util.Objects["defaultTags"] = new function() {
 									}
 									page.notify(response.cms_message);
 								}
-								u.request(this, "/admin/cms/update/"+this.div.item_id, {"method":"post", "params":"tags="+this._id});
+								u.request(this, "/janitor/admin/items/update/"+this.div.item_id, {"method":"post", "params":"tags="+this._id});
 							}
 						}
 					}

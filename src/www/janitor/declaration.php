@@ -30,9 +30,9 @@ if(is_array($action) && count($action)) {
 	// Requires exactly two parameters /enable/#item_id#
 	if(count($action) == 1 && $action[0] == "list") {
 
-		$page->header(array("type" => "admin"));
+		$page->header(array("type" => "janitor"));
 		$page->template("admin/declaration/list.php");
-		$page->footer(array("type" => "admin"));
+		$page->footer(array("type" => "janitor"));
 		exit();
 
 	}

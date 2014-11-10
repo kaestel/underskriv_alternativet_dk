@@ -14,11 +14,11 @@
 	<meta name="MSSmartTagsPreventParsing" content="true" />
 	<meta http-equiv="imagetoolbar" content="no" />
 <? if(session()->value("dev")) { ?>
-	<link type="text/css" rel="stylesheet" media="all" href="/admin/css/lib/seg_<?= $this->segment() ?>_include.css" />
-	<script type="text/javascript" src="/admin/js/lib/seg_<?= $this->segment() ?>_include.js"></script>
+	<link type="text/css" rel="stylesheet" media="all" href="/janitor/css/lib/seg_<?= $this->segment() ?>_include.css" />
+	<script type="text/javascript" src="/janitor/js/lib/seg_<?= $this->segment() ?>_include.js"></script>
 <? } else { ?>
-	<link type="text/css" rel="stylesheet" media="all" href="/admin/css/seg_<?= $this->segment() ?>.css" />
-	<script type="text/javascript" src="/admin/js/seg_<?= $this->segment() ?>.js"></script>
+	<link type="text/css" rel="stylesheet" media="all" href="/janitor/css/seg_<?= $this->segment() ?>.css" />
+	<script type="text/javascript" src="/janitor/js/seg_<?= $this->segment() ?>.js"></script>
 <? } ?>
 
 </head>
@@ -28,7 +28,7 @@
 <div id="page" class="i:page">
 	<div id="header">
 		<ul class="servicenavigation">
-			<li class="keynav front"><a href="/admin">Frontpage</a></li>
+			<li class="keynav front"><a href="/janitor">Frontpage</a></li>
 		</ul>
 	</div>
 
