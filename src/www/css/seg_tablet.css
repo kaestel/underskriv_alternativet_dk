@@ -129,8 +129,7 @@ dt {display: inline-block; vertical-align: top; text-transform: uppercase; color
 
 
 /*s-footer-desktop.css*/
-#footer { background:#ffffff; width: 737px; padding: 40px 20px 40px; margin: 20px auto;}
-#footer .social {display: none;}
+#footer {background:#ffffff; width: 737px; padding: 40px 20px 20px; margin: 20px auto;}
 #footer .about {width:740px; margin:0 auto; position: relative;	padding-bottom: 20px;
 	background: url("/img/logo.png") no-repeat; background-position: 615px 0px;
 }

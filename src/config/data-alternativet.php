@@ -24,9 +24,15 @@ $slug_data_address .= '</div>';
 $slug_data_receipt = '';
 $slug_data_receipt .= '<h1>Tusind tak</h1>';
 $slug_data_receipt .= '<p>Vi har nu modtaget din underskrevne vælgererklæring.</p>';
-$slug_data_receipt .= '<p>Indenfor nogle uger får du den tilbage med posten fra Folkeregistret i din kommune. Husk at sende den til os med post hurtigst muligt. Først når vi modtager den fra dig, tæller den med blandt de 20.260 vælgererklæringer, som vi skal bruge for at kunne stille op til næste folketingsvalg.</p>';
-$slug_data_receipt .= '<h3>Frimærke på SMS</h3>';
-$slug_data_receipt .= '<p><a href="http://www.postdanmark.dk/da/Privat/Køb%20online/mobilporto/Sider/home.aspx" target="_blank">Benyt Post Danmarks "Mobilporto"</a> i stedet for frimærker på kuverten. Send en SMS med ”porto” til 1900 – så får du en kode, du skal skrive der, hvor frimærket skulle have siddet.</p>';
+
+$slug_data_receipt .= '<h3>Upload din godkendte vælgererklæring til os</h3>';
+$slug_data_receipt .= '<p>Indenfor nogle uger får du din godkendte vælgererklæring tilbage med posten fra Folkeregistret i din kommune. Først når vi modtager den fra dig, tæller den med blandt de 20.260 vælgererklæringer, som vi skal bruge for at kunne stille op til næste folketingsvalg.</p>';
+$slug_data_receipt .= '<p>Husk at sende den til os hurtigst muligt!</p>';
+$slug_data_receipt .= '<p>Du gør det meget hurtigt og nemt ved at tage et foto af den med din smartphone og uploade den til os: <a href="https://www.alternativet.dk/secure">www.alternativet.dk/secure</a>.</p>';
+
+$slug_data_receipt .= '<h3>Eller send den pr. post</h3>';
+$slug_data_receipt .= '<p>Hvis du hellere vil sende den til os med post, kan du gøre det pr. post. Benyt Post Danmarks "Mobilporto" i stedet for frimærker på kuverten. Send en SMS med "porto" til 1900 - så får du en kode, du skal skrive der, hvor firmærket skulle have siddet.</p>';
+
 $slug_data_receipt .= '<h3>Modtag en påmindelse</h3>';
 $slug_data_receipt .= '<p>Du kan sende os din e-mailadresse til <a href="mailto:reminder@alternativet.dk">reminder@alternativet.dk</a> – så sender vi dig en påmindelse om at sende vælgererklæringen ind til os igen.</p>';
 $slug_data_receipt .= '<p class="regards">Med venlig hilsen,</p>';

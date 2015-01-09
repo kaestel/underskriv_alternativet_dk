@@ -44,7 +44,7 @@ Util.Objects["signature"] = new function() {
 
 			// inject help text
 			u.ae(this, "h2", {"html":"Underskriv vælgererklæringen"});
-			u.ae(this, "p", {"html":"Både dato og underskrift skal skrives med hånden/musen.<br />Klik på de røde felter i formularen ovenfor, for at vælge hvilket felt du vil skrive i."});
+			u.ae(this, "p", {"html":"Både DAGS DATO og UNDERSKRIFT skal skrives med hånden/musen.<br />Klik på de røde felter i formularen ovenfor, for at vælge hvilket felt du vil skrive i."});
 
 
 			// signature input

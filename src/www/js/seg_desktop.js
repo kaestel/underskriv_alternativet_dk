@@ -3316,7 +3316,7 @@ Util.Objects["signature"] = new function() {
 			u.e.addEvent(window, "scroll", this.scrolled);
 			this._signatureform = u.qs("div.signatureform", this);
 			u.ae(this, "h2", {"html":"Underskriv vælgererklæringen"});
-			u.ae(this, "p", {"html":"Både dato og underskrift skal skrives med hånden/musen.<br />Klik på de røde felter i formularen ovenfor, for at vælge hvilket felt du vil skrive i."});
+			u.ae(this, "p", {"html":"Både DAGS DATO og UNDERSKRIFT skal skrives med hånden/musen.<br />Klik på de røde felter i formularen ovenfor, for at vælge hvilket felt du vil skrive i."});
 			this.div_signature = u.ae(this._signatureform, "div", {"class":"signature"});
 			this.canvas_signature = u.ae(this.div_signature, "canvas", {"class":"signature"});
 			this.canvas_signature._offsetLeft = u.absX(this.canvas_signature);
