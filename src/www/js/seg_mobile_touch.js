@@ -3531,8 +3531,8 @@ Util.Objects["signature"] = new function() {
 			this.canvas_signature._offsetTop = u.absY(this.canvas_signature);
 			this.canvas_signature.width = this.div_signature.offsetWidth - 4;
 			this.canvas_signature.height = this.canvas_signature.width/this.canvas_signature._proportion;
-			this.canvas_signature._factor_x = this.canvas_signature.width/133;
-			this.canvas_signature._factor_y = this.canvas_signature.height/22;
+			this.canvas_signature._factor_x = this.canvas_signature.width/250;
+			this.canvas_signature._factor_y = this.canvas_signature.height/41;
 			this.canvas_signature.repeat();
 			this.validateSignature();
 		}
@@ -3605,7 +3605,7 @@ Util.Objects["signature"] = new function() {
 				this.paths.x_paths.push(u.round(this._cx/this._factor_x, 3));
 				this.paths.y_paths.push(u.round(this._cy/this._factor_y, 3));
 			}
-			u.ae(this.div_date, "p", {"html":"Dato"});
+			u.ae(this.div_date, "p", {"html":"Dags dato"});
 			this.canvas_date = u.ae(this.div_date, "canvas", {"class":"date"});
 			this.canvas_date._offsetLeft = u.absX(this.canvas_date);
 			this.canvas_date._offsetTop = u.absY(this.canvas_date);

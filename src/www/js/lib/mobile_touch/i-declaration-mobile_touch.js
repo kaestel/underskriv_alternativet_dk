@@ -66,8 +66,8 @@ Util.Objects["signature"] = new function() {
 			this.canvas_signature._offsetTop = u.absY(this.canvas_signature);
 			this.canvas_signature.width = this.div_signature.offsetWidth - 4;
 			this.canvas_signature.height = this.canvas_signature.width/this.canvas_signature._proportion;
-			this.canvas_signature._factor_x = this.canvas_signature.width/133;
-			this.canvas_signature._factor_y = this.canvas_signature.height/22;
+			this.canvas_signature._factor_x = this.canvas_signature.width/250;
+			this.canvas_signature._factor_y = this.canvas_signature.height/41;
 			this.canvas_signature.repeat();
 
 			this.validateSignature();
@@ -198,7 +198,7 @@ Util.Objects["signature"] = new function() {
 				this._bx = this._cx;
 				this._by = this._cy;
 
-//				u.bug("drawing in progress: x=" + this._cx + ", y=" + this._cy);
+//				u.bug("drawing in progress: x=" + this._cx + " ("+u.round(this._cx/this._factor_x, 3)+", "+this._factor_x+"), y=" + this._cy + " ("+u.round(this._cy/this._factor_y, 3)+", "+this._factor_y+")");
 
 				this._context.lineTo(this._cx, this._cy);
 				this._context.stroke();
@@ -212,7 +212,7 @@ Util.Objects["signature"] = new function() {
 
 
 			// date drawing
-			u.ae(this.div_date, "p", {"html":"Dato"});
+			u.ae(this.div_date, "p", {"html":"Dags dato"});
 			this.canvas_date = u.ae(this.div_date, "canvas", {"class":"date"});
 
 			this.canvas_date._offsetLeft = u.absX(this.canvas_date);
@@ -286,8 +286,11 @@ Util.Objects["signature"] = new function() {
 			this.canvas_signature._factor_x = this.canvas_signature.width/250;
 			this.canvas_signature._factor_y = this.canvas_signature.height/41;
 
+
 			this.canvas_signature._context = this.canvas_signature.getContext("2d");
+
 //			this.canvas_signature._context.strokeStyle = "#009f00";
+
 			this.canvas_signature._context.lineWidth = 1;
 			this.canvas_signature.scene = this;
 
