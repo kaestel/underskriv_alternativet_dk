@@ -8,7 +8,7 @@
 
 				<p class="approved">
 					Denne løsning er 
-					<a href="http://oim.dk" target="_blank">godkendt af Økonomi- og Indenrigsministeriet</a>.
+					<a href="http://valg.oim.dk/media/624285/Oplysning-Dukkepartiets-loesning-til-indsamling-af-vaelgererklaeringer.pdf" target="_blank">godkendt af Økonomi- og Indenrigsministeriet</a>.
 				</p>
 
 			</div>
