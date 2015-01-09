@@ -3,24 +3,40 @@ global $slug_data_intro;
 global $slug;
 
 
-// session not initalized yet, prefill with dummy data
-// only for ease of testing - to be removed before launch
+// session not initalized yet
+
 
 if(!session()->value("signature_id")) {
 
 	session()->value("signature_id", gen_uuid());
 
-	$name            = "En borgers navn";
-	$address1        = "En vej et sted i danmark";
-	$address2        = "Et sted i provinsen";
-	$postal          = "1234";
-	$city            = "En by med et navn";
-	$municipality    = "Kommuneslev";
-	$cpr_1           = "123456";
-	$cpr_2           = "1234";
+	$name = "";
+	$address1 = "";
+	$address2 = "";
+	$postal = "";
+	$city = "";
+	$municipality = "";
+	$cpr_1 = "";
+	$cpr_2 = "";
 
-	$date_data       = "";
-	$signature_data  = "";
+	$date_data = "";
+	$signature_data = "";
+
+
+	// prefill with dummy data
+	// only for ease of testing - to be removed before launch
+
+	// $name            = "En borgers navn";
+	// $address1        = "En vej et sted i danmark";
+	// $address2        = "Et sted i provinsen";
+	// $postal          = "1234";
+	// $city            = "En by med et navn";
+	// $municipality    = "Kommuneslev";
+	// $cpr_1           = "123456";
+	// $cpr_2           = "1234";
+	//
+	// $date_data       = "";
+	// $signature_data  = "";
 
 }
 else {
