@@ -2,7 +2,7 @@
 #footer { background:#ffffff; width: 737px; padding: 40px 20px 40px; margin: 20px auto;}
 #footer .social {display: none;}
 
-#footer .about {width:740px; margin:0 auto; position: relative;
+#footer .about {width:740px; margin:0 auto; position: relative;	padding-bottom: 20px;
 	background: url("/img/logo.png") no-repeat; background-position: 615px 0px;
 }
 #footer .about p {color: #ffffff; font-size: 26px; font-family: 'Circular', Arial, sans-serif; font-weight: bold; font-style:italic;}

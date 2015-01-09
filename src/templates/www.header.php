@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="<?= $this->language() ?>">
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-	<!-- (c) & (p) e-types.com, 2014 //-->
+	<!-- (c) & (p) think.dk, 2013-2015 //-->
 	<!-- All material protected by copyrightlaws, as if you didnt know //-->
 	<title><?= $this->pageTitle() ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="keywords" content="Vælgererklæring parti valg folketinget demokrati" />
+	<meta name="description" content="Støt demokratiet ved at hjælpe nye partier med at stille op til folketingsvalget. Skriv under online." />
 	<meta name="viewport" content="initial-scale=1, user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />

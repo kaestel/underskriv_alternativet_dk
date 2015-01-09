@@ -13,6 +13,11 @@ body.declaration #content .scene h2 {padding: 0 0 10px; font-size: 20px; text-al
 	font-family: 'Circular', Arial,sans-serif; text-transform: uppercase;
 }
 
+body.declaration #content .scene h3 {padding: 10px 0 ; font-size: 16px; text-align: center;
+	font-family: 'Circular', Arial,sans-serif; text-transform: uppercase;
+}
+
+
 body.declaration #content .scene .vcard {font-size: 0; padding: 0 0 30px; text-align: center;}
 body.declaration #content .scene .vcard .name {font-size: 48px; padding: 0 0 6px; font-weight: bold;}
 body.declaration #content .scene .vcard .po-box,
@@ -130,6 +135,9 @@ body.declaration #content .scene.signature canvas.canvas_input.date {background:
 body.declaration #content .scene.preview {padding-bottom: 40px;}
 #content .scene.preview div.signatureform {height: 400px;}
 #content .scene.preview ul.actions {padding: 0; text-align: right;}
+body.declaration #content .scene.preview .signature_data,
+body.declaration #content .scene.preview .date_data {display: none;}
+
 
 
 

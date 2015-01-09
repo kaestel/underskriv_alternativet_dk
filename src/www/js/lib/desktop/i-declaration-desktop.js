@@ -39,7 +39,8 @@ Util.Objects["signature"] = new function() {
 
 
 			this._signatureform = u.qs("div.signatureform", this);
-
+//			this._slug = u.qs("#slug").value;
+//			this._approved_input = u.qs("#approved")
 
 			// inject help text
 			u.ae(this, "h2", {"html":"Underskriv vælgererklæringen"});
@@ -340,6 +341,7 @@ Util.Objects["signature"] = new function() {
 				}
 				else {
 
+//					this.scene._approved_input.value = 1;
 					this.scene._form.submit();
 				}
 
@@ -352,7 +354,10 @@ Util.Objects["signature"] = new function() {
 
 			u.e.click(this.bn_back);
 			this.bn_back.clicked = function(event) {
+//				this.scene._approved_input.value = 0;
+
 				this.scene._form.action = "/vaelgererklaering";
+//				this.scene._form.action = "/"+this.scene._slug;
 				this.scene._form.submit();
 			}
 
@@ -406,6 +411,7 @@ Util.Objects["preview"] = new function() {
 
 			this._signatureform = u.qs("div.signatureform", this);
 			this._form = u.qs("form", this);
+			this._approved_input = u.qs("#approved")
 
 			// signature input
 			this.div_signature = u.ae(this._signatureform, "div", {"class":"signature"});
@@ -418,7 +424,7 @@ Util.Objects["preview"] = new function() {
 			this.canvas_signature._context.strokeStyle = "#009f00";
 			this.canvas_signature._context.lineWidth = 0.5;
 			this.canvas_signature.scene = this;
-			this.canvas_signature.paths = JSON.parse(decodeURIComponent(u.qs("#signature_data").value).replace(/\\/g, ""));
+			this.canvas_signature.paths = JSON.parse(decodeURIComponent(u.qs("#signature_data").innerHTML).replace(/\\/g, ""));
 			
 
 
@@ -433,7 +439,7 @@ Util.Objects["preview"] = new function() {
 			this.canvas_date._context.strokeStyle = "#009f00";
 			this.canvas_date._context.lineWidth = 0.5;
 			this.canvas_date.scene = this;
-			this.canvas_date.paths = JSON.parse(decodeURIComponent(u.qs("#date_data").value).replace(/\\/g, ""));
+			this.canvas_date.paths = JSON.parse(decodeURIComponent(u.qs("#date_data").innerHTML).replace(/\\/g, ""));
 
 
 
@@ -499,6 +505,7 @@ Util.Objects["preview"] = new function() {
 
 			u.e.click(this.bn_back);
 			this.bn_back.clicked = function(event) {
+				this.scene._approved_input.value = 0;
 				this.scene._form.action = "/vaelgererklaering/signature";
 				this.scene._form.submit();
 			}

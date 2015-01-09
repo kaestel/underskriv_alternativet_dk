@@ -131,7 +131,7 @@ dt {display: inline-block; vertical-align: top; text-transform: uppercase; color
 /*s-footer-desktop.css*/
 #footer { background:#ffffff; width: 737px; padding: 40px 20px 40px; margin: 20px auto;}
 #footer .social {display: none;}
-#footer .about {width:740px; margin:0 auto; position: relative;
+#footer .about {width:740px; margin:0 auto; position: relative;	padding-bottom: 20px;
 	background: url("/img/logo.png") no-repeat; background-position: 615px 0px;
 }
 #footer .about p {color: #ffffff; font-size: 26px; font-family: 'Circular', Arial, sans-serif; font-weight: bold; font-style:italic;}
@@ -156,6 +156,9 @@ body.declaration #content .scene h1 {padding: 0 0 10px; font-size: 20px; text-al
 	font-family: 'Circular', Arial,sans-serif; text-transform: uppercase;
 }
 body.declaration #content .scene h2 {padding: 0 0 10px; font-size: 20px; text-align: center;
+	font-family: 'Circular', Arial,sans-serif; text-transform: uppercase;
+}
+body.declaration #content .scene h3 {padding: 10px 0 ; font-size: 16px; text-align: center;
 	font-family: 'Circular', Arial,sans-serif; text-transform: uppercase;
 }
 body.declaration #content .scene .vcard {font-size: 0; padding: 0 0 30px; text-align: center;}
@@ -246,6 +249,8 @@ body.declaration #content .scene.signature canvas.canvas_input.date {background:
 body.declaration #content .scene.preview {padding-bottom: 40px;}
 #content .scene.preview div.signatureform {height: 400px;}
 #content .scene.preview ul.actions {padding: 0; text-align: right;}
+body.declaration #content .scene.preview .signature_data,
+body.declaration #content .scene.preview .date_data {display: none;}
 #content .scene.receipt {width: 737px; margin: 0 auto; position: relative; padding: 50px 0 70px;}
 body.declaration #content .scene.receipt h1 {font-size: 40px; font-weight: bold; padding-bottom:20px;}
 body.declaration #content .scene.receipt p {font-size: 16px; text-align: center; padding:0 100px 20px;}

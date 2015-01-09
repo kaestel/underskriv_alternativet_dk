@@ -1,4 +1,4 @@
-<div class="scene i:scene 404">
+<div class="scene i:scene missing">
 	<h1>404</h1>
 	<h2>Siden mangler</h2>
 	<p>

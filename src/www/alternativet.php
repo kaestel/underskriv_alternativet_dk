@@ -8,18 +8,20 @@ include_once($_SERVER["FRAMEWORK_PATH"]."/config/init.php");
 
 $action = $page->actions();
 
-// TODO: force dev setting for testing
-session()->value("dev", 1);
-
 
 $page->bodyClass("declaration");
-$page->pageTitle("Vælg parti");
+$page->pageTitle("Vælgererklæring");
 
+$slug = "alternativet";
+
+
+session()->value("slug", $slug);
+include("config/data-".$slug.".php");
 
 
 
 $page->header();
-$page->template("pages/list.php");
+$page->template("declaration/start.php");
 $page->footer();
 
 ?>

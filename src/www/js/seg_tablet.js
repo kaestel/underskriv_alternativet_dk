@@ -3153,6 +3153,91 @@ Util.getVar = function(param, url) {
 }
 
 
+/*u-form-custom.js*/
+Util.Form.customInit["postalcity"] = function(field) {
+	field._input = u.qs("input.postal", field);
+	field._input_city = u.qs("input.city", field);
+	field._input.field = field;
+	field._input_city.field = field;
+	u.f.formIndex(field._input.form, field._input);
+	u.f.formIndex(field._input_city.form, field._input_city);
+}
+Util.Form.customInit["cpr"] = function(field) {
+	field._input = u.qs("input.cpr1", field);
+	field._input.updated = function() {
+		if(this.val().length == 6) {
+			this.field._input_cpr2.focus();
+		}
+	}
+	field._input_cpr2 = u.qs("input.cpr2", field);
+	field._input.autocomplete = "Off";
+	field._input_cpr2.autocomplete = "Off";
+	field._input.field = field;
+	field._input_cpr2.field = field;
+	u.f.formIndex(field._input.form, field._input);
+	u.f.formIndex(field._input_cpr2.form, field._input_cpr2);
+}
+Util.Form.customValidate["postalcity"] = function(iN) {
+	if(u.hc(iN, "postal")) {
+		min = 1000;
+		max = 9999;
+		if(
+			!isNaN(iN.val()) && 
+			iN.val() >= min && 
+			iN.val() <= max
+		) {
+			u.f.fieldCorrect(iN);
+		}
+		else {
+			u.f.fieldError(iN);
+		}
+	}
+	if(u.hc(iN, "city")) {
+		min = 1;
+		max = 255;
+		if(
+			iN.val().length >= min &&
+			iN.val().length <= max
+		) {
+			u.f.fieldCorrect(iN);
+		}
+		else {
+			u.f.fieldError(iN);
+		}
+	}
+}
+Util.Form.customValidate["cpr"] = function(iN) {
+	if(u.hc(iN, "cpr1")) {
+		min = 10101;
+		max = 311299;
+		if(
+			!isNaN(iN.val()) && 
+			iN.val() >= min && 
+			iN.val() <= max
+		) {
+			u.f.fieldCorrect(iN);
+		}
+		else {
+			u.f.fieldError(iN);
+		}
+	}
+	if(u.hc(iN, "cpr2")) {
+		min = 0;
+		max = 9999;
+		if(
+			!isNaN(iN.val()) && 
+			iN.val() >= min && 
+			iN.val() <= max
+		) {
+			u.f.fieldCorrect(iN);
+		}
+		else {
+			u.f.fieldError(iN);
+		}
+	}
+}
+
+
 /*i-page-desktop.js*/
 u.bug_console_only = true;
 Util.Objects["page"] = new function() {
@@ -3426,6 +3511,7 @@ Util.Objects["preview"] = new function() {
 		scene.ready = function() {
 			this._signatureform = u.qs("div.signatureform", this);
 			this._form = u.qs("form", this);
+			this._approved_input = u.qs("#approved")
 			this.div_signature = u.ae(this._signatureform, "div", {"class":"signature"});
 			this.canvas_signature = u.ae(this.div_signature, "canvas", {"class":"signature"});
 			this.canvas_signature._offsetLeft = u.absX(this.canvas_signature);
@@ -3436,7 +3522,7 @@ Util.Objects["preview"] = new function() {
 			this.canvas_signature._context.strokeStyle = "#009f00";
 			this.canvas_signature._context.lineWidth = 0.5;
 			this.canvas_signature.scene = this;
-			this.canvas_signature.paths = JSON.parse(decodeURIComponent(u.qs("#signature_data").value).replace(/\\/g, ""));
+			this.canvas_signature.paths = JSON.parse(decodeURIComponent(u.qs("#signature_data").innerHTML).replace(/\\/g, ""));
 			this.div_date = u.ae(this._signatureform, "div", {"class":"date"});
 			this.canvas_date = u.ae(this.div_date, "canvas", {"class":"date"});
 			this.canvas_date._offsetLeft = u.absX(this.canvas_date);
@@ -3447,7 +3533,7 @@ Util.Objects["preview"] = new function() {
 			this.canvas_date._context.strokeStyle = "#009f00";
 			this.canvas_date._context.lineWidth = 0.5;
 			this.canvas_date.scene = this;
-			this.canvas_date.paths = JSON.parse(decodeURIComponent(u.qs("#date_data").value).replace(/\\/g, ""));
+			this.canvas_date.paths = JSON.parse(decodeURIComponent(u.qs("#date_data").innerHTML).replace(/\\/g, ""));
 			this.canvas_signature._repeat = function(event) {
 				var i, draw;
 				this._context.beginPath();
@@ -3490,6 +3576,7 @@ Util.Objects["preview"] = new function() {
 			this.bn_back.scene = this;
 			u.e.click(this.bn_back);
 			this.bn_back.clicked = function(event) {
+				this.scene._approved_input.value = 0;
 				this.scene._form.action = "/vaelgererklaering/signature";
 				this.scene._form.submit();
 			}
@@ -3498,91 +3585,6 @@ Util.Objects["preview"] = new function() {
 	}
 }
 u.e.addDOMReadyEvent(u.init);
-
-
-/*u-form-custom.js*/
-Util.Form.customInit["postalcity"] = function(field) {
-	field._input = u.qs("input.postal", field);
-	field._input_city = u.qs("input.city", field);
-	field._input.field = field;
-	field._input_city.field = field;
-	u.f.formIndex(field._input.form, field._input);
-	u.f.formIndex(field._input_city.form, field._input_city);
-}
-Util.Form.customInit["cpr"] = function(field) {
-	field._input = u.qs("input.cpr1", field);
-	field._input.updated = function() {
-		if(this.val().length == 6) {
-			this.field._input_cpr2.focus();
-		}
-	}
-	field._input_cpr2 = u.qs("input.cpr2", field);
-	field._input.autocomplete = "Off";
-	field._input_cpr2.autocomplete = "Off";
-	field._input.field = field;
-	field._input_cpr2.field = field;
-	u.f.formIndex(field._input.form, field._input);
-	u.f.formIndex(field._input_cpr2.form, field._input_cpr2);
-}
-Util.Form.customValidate["postalcity"] = function(iN) {
-	if(u.hc(iN, "postal")) {
-		min = 1000;
-		max = 9999;
-		if(
-			!isNaN(iN.val()) && 
-			iN.val() >= min && 
-			iN.val() <= max
-		) {
-			u.f.fieldCorrect(iN);
-		}
-		else {
-			u.f.fieldError(iN);
-		}
-	}
-	if(u.hc(iN, "city")) {
-		min = 1;
-		max = 255;
-		if(
-			iN.val().length >= min &&
-			iN.val().length <= max
-		) {
-			u.f.fieldCorrect(iN);
-		}
-		else {
-			u.f.fieldError(iN);
-		}
-	}
-}
-Util.Form.customValidate["cpr"] = function(iN) {
-	if(u.hc(iN, "cpr1")) {
-		min = 10101;
-		max = 311299;
-		if(
-			!isNaN(iN.val()) && 
-			iN.val() >= min && 
-			iN.val() <= max
-		) {
-			u.f.fieldCorrect(iN);
-		}
-		else {
-			u.f.fieldError(iN);
-		}
-	}
-	if(u.hc(iN, "cpr2")) {
-		min = 0;
-		max = 9999;
-		if(
-			!isNaN(iN.val()) && 
-			iN.val() >= min && 
-			iN.val() <= max
-		) {
-			u.f.fieldCorrect(iN);
-		}
-		else {
-			u.f.fieldError(iN);
-		}
-	}
-}
 
 
 /*ga.js*/
