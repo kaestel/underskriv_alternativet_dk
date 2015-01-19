@@ -2,7 +2,7 @@ body.declaration {background: #e8e8e8;}
 body.declaration #header {display: none;}
 
 
-body.declaration #content .scene {padding: 30px 20px 50px; margin: 0 auto; position: relative; background: #ffffff;}
+body.declaration #content .scene {padding: 30px 20px 50px; margin: 0 auto; position: relative; background: #ffffff; overflow: hidden;}
 
 
 body.declaration #content .scene h2 {padding: 0 0 10px; font-size: 20px;

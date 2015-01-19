@@ -1,4 +1,5 @@
 u.bug_force = true;
+//u.bug_console_only = false;
 
 Util.Objects["dataform"] = new function() {
 	this.init = function(scene) {
@@ -7,17 +8,19 @@ Util.Objects["dataform"] = new function() {
 		// resize scene
 		scene.resized = function() {
 
-			u.as(this.form.fields["name"], "width", (this.form.offsetWidth - 8) + "px");
-			u.as(this.form.fields["address1"], "width", (this.form.offsetWidth - 8) + "px");
-			u.as(this.form.fields["address2"], "width", (this.form.offsetWidth - 8) + "px");
+			var calc_width = this.form.offsetWidth;
 
-			u.as(this.form.fields["postal"], "width", (this.form.offsetWidth - 28)*0.2 + "px");
-			u.as(this.form.fields["city"], "width", (this.form.offsetWidth - 28)*0.8 + "px");
+			u.as(this.form.fields["name"], "width", (calc_width - 8) + "px");
+			u.as(this.form.fields["address1"], "width", (calc_width - 8) + "px");
+			u.as(this.form.fields["address2"], "width", (calc_width - 8) + "px");
 
-			u.as(this.form.fields["municipality"], "width", (this.form.offsetWidth - 8) + "px");
+			u.as(this.form.fields["postal"], "width", Math.floor(calc_width - 29)*0.2 + "px");
+			u.as(this.form.fields["city"], "width", Math.floor(calc_width - 28)*0.8 + "px");
 
-			u.as(this.form.fields["cpr_1"], "width", (this.form.offsetWidth - 28)*0.6 + "px");
-			u.as(this.form.fields["cpr_2"], "width", (this.form.offsetWidth - 28)*0.4 + "px");
+			u.as(this.form.fields["municipality"], "width", (calc_width - 8) + "px");
+
+			u.as(this.form.fields["cpr_1"], "width", Math.floor(calc_width - 28)*0.6 + "px");
+			u.as(this.form.fields["cpr_2"], "width", Math.floor(calc_width - 28)*0.4 + "px");
 		
 		}
 
@@ -147,7 +150,7 @@ Util.Objects["signature"] = new function() {
 				this._bx = u.eventX(event)-this._offsetLeft;
 				this._by = u.eventY(event)-this._offsetTop;
 
-				u.bug("begin drawing: x=" + this._bx + ", y=" + this._by + ", this._offsetLeft:" + this._offsetLeft);
+//				u.bug("begin drawing: x=" + this._bx + ", y=" + this._by + ", this._offsetLeft:" + this._offsetLeft);
 
 
 				this._context.moveTo(this._bx, this._by);
@@ -178,7 +181,7 @@ Util.Objects["signature"] = new function() {
 				this.paths.x_paths.push(u.round(this._cx/this._factor_x, 3));
 				this.paths.y_paths.push(u.round(this._cy/this._factor_y, 3));
 
-				u.e.removeMoveEvent(this, this.scene._draw);
+//				u.e.removeMoveEvent(this, this.scene._draw);
 
 				this._input.value = encodeURIComponent(JSON.stringify(this.paths));
 
