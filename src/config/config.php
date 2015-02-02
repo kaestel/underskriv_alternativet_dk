@@ -42,7 +42,7 @@ $slug_data = array("alternativet");
 $slug_data_intro = '';
 $slug_data_address = '';
 $slug_data_receipt = '';
-$slug_data_footer = '<div class="about">Vælgererklæring.dk</div>';
+$slug_data_footer = '<div class="about">Alternativet</div>';
 
 
 ?>

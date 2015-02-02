@@ -2,7 +2,8 @@ body.declaration {background: #e8e8e8;}
 body.declaration #header {display: none;}
 
 
-body.declaration #content .scene {width: 737px; padding: 50px 20px 70px; margin: 0 auto; position: relative; background: #ffffff;}
+body.declaration #content .scene,
+body.error #content .scene {width: 737px; padding: 50px 20px 70px; margin: 0 auto; position: relative; background: #ffffff;}
 
 /* INTRO TEXT */
 body.declaration #content .scene h1 {padding: 0 0 10px; font-size: 20px; text-align: center;

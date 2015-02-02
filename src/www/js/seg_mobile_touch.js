@@ -3190,16 +3190,16 @@ Util.Animation = u.a = new function() {
 	}
 	this.vendor = function(method) {
 		if(this._vendor === undefined) {
-			if(document.body.style.webkitTransform != undefined) {
+			if(document.documentElement.style.webkitTransform != undefined) {
 				this._vendor = "webkit";
 			}
-			else if(document.body.style.MozTransform != undefined) {
+			else if(document.documentElement.style.MozTransform != undefined) {
 				this._vendor = "moz";
 			}
-			else if(document.body.style.oTransform != undefined) {
+			else if(document.documentElement.style.oTransform != undefined) {
 				this._vendor = "o";
 			}
-			else if(document.body.style.msTransform != undefined) {
+			else if(document.documentElement.style.msTransform != undefined) {
 				this._vendor = "ms";
 			}
 			else {
@@ -4196,7 +4196,8 @@ Util.Objects["signature"] = new function() {
 			this._form = u.ae(this, this._form);
 			this._beginDrawing = function(event) {
 				u.e.kill(event);
-				u.e.addMoveEvent(this, this.scene._draw);
+				this.scene.activeElement = this;
+				u.e.addMoveEvent(this.scene, this.scene._draw);
 				this._bx = u.eventX(event)-this._offsetLeft;
 				this._by = u.eventY(event)-this._offsetTop;
 				this._context.moveTo(this._bx, this._by);
@@ -4206,26 +4207,32 @@ Util.Objects["signature"] = new function() {
 				this.paths.y_paths.push(u.round(this._by/this._factor_y, 3));
 			}
 			this._endDrawing = function(event) {
-				this._cx = this._bx;
-				this._cy = this._by;
-				this._context.closePath();
-				this.paths.paths.push(0);
-				this.paths.x_paths.push(u.round(this._cx/this._factor_x, 3));
-				this.paths.y_paths.push(u.round(this._cy/this._factor_y, 3));
-				this._input.value = encodeURIComponent(JSON.stringify(this.paths));
-				this.scene.validateSignature();
+				if(this.activeElement) {
+					this.activeElement._cx = this.activeElement._bx;
+					this.activeElement._cy = this.activeElement._by;
+					this.activeElement._context.closePath();
+					this.activeElement.paths.paths.push(0);
+					this.activeElement.paths.x_paths.push(u.round(this.activeElement._cx/this.activeElement._factor_x, 3));
+					this.activeElement.paths.y_paths.push(u.round(this.activeElement._cy/this.activeElement._factor_y, 3));
+					u.e.removeMoveEvent(this, this._draw);
+					this.activeElement._input.value = encodeURIComponent(JSON.stringify(this.activeElement.paths));
+					this.activeElement.scene.validateSignature();
+					this.activeElement = false;
+				}
 			}
 			this._draw = function(event) {
 				u.e.kill(event);
-				this._cx = u.eventX(event)-this._offsetLeft;
-				this._cy = u.eventY(event)-this._offsetTop;
-				this._bx = this._cx;
-				this._by = this._cy;
-				this._context.lineTo(this._cx, this._cy);
-				this._context.stroke();
-				this.paths.paths.push(this._context.strokeStyle);
-				this.paths.x_paths.push(u.round(this._cx/this._factor_x, 3));
-				this.paths.y_paths.push(u.round(this._cy/this._factor_y, 3));
+				if(this.activeElement) {
+					this.activeElement._cx = u.eventX(event)-this.activeElement._offsetLeft;
+					this.activeElement._cy = u.eventY(event)-this.activeElement._offsetTop;
+					this.activeElement._bx = this.activeElement._cx;
+					this.activeElement._by = this.activeElement._cy;
+					this.activeElement._context.lineTo(this.activeElement._cx, this.activeElement._cy);
+					this.activeElement._context.stroke();
+					this.activeElement.paths.paths.push(this.activeElement._context.strokeStyle);
+					this.activeElement.paths.x_paths.push(u.round(this.activeElement._cx/this.activeElement._factor_x, 3));
+					this.activeElement.paths.y_paths.push(u.round(this.activeElement._cy/this.activeElement._factor_y, 3));
+				}
 			}
 			u.ae(this.div_date, "p", {"html":"Dags dato"});
 			this.canvas_date = u.ae(this.div_date, "canvas", {"class":"date"});
@@ -4260,9 +4267,7 @@ Util.Objects["signature"] = new function() {
 				}
 			}
 			u.e.addStartEvent(this.canvas_date, this._beginDrawing);
-			u.e.addEndEvent(this.canvas_date, this._endDrawing);
 			if(u.e.event_pref == "mouse") {
-				u.e.addEvent(this.canvas_date, "mouseout", this._endDrawing);
 			}
 			u.ae(this.div_signature, "p", {"html":"Underskrift"});
 			this.canvas_signature = u.ae(this.div_signature, "canvas", {"class":"signature"});
@@ -4297,10 +4302,9 @@ Util.Objects["signature"] = new function() {
 				}
 			}
 			u.e.addStartEvent(this.canvas_signature, this._beginDrawing);
-			u.e.addEndEvent(this.canvas_signature, this._endDrawing);
 			if(u.e.event_pref == "mouse") {
-				u.e.addEvent(this.canvas_signature, "mouseout", this._endDrawing);
 			}
+			u.e.addEndEvent(this, this._endDrawing);
 			this.canvas_reset = u.ae(this.actions, "li", {"class":"reset", "html":"Slet"});
 			this.canvas_reset.scene = this;
 			u.e.click(this.canvas_reset);

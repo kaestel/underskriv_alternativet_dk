@@ -145,7 +145,11 @@ Util.Objects["signature"] = new function() {
 			this._beginDrawing = function(event) {
 				u.e.kill(event);
 
-				u.e.addMoveEvent(this, this.scene._draw);
+				this.scene.activeElement = this;
+
+
+				u.e.addMoveEvent(this.scene, this.scene._draw);
+//				u.e.addMoveEvent(this, this.scene._draw);
 
 				this._bx = u.eventX(event)-this._offsetLeft;
 				this._by = u.eventY(event)-this._offsetTop;
@@ -163,30 +167,56 @@ Util.Objects["signature"] = new function() {
 			}
 
 			this._endDrawing = function(event) {
-//				u.bug("event in end:" + event)
+//				u.bug("event in end:" + event + ", " + this.activeElement)
 
 				// this._cx = u.eventX(event)-this._offsetLeft;
 				// this._cy = u.eventY(event)-this._offsetTop;
 
 				// end-event does not have eventX/Y
+				if(this.activeElement) {
 
-				this._cx = this._bx;
-				this._cy = this._by;
+					this.activeElement._cx = this.activeElement._bx;
+					this.activeElement._cy = this.activeElement._by;
 
-//				u.bug("end drawing: x=" + this._cx + ", y=" + this._cy);
+	//				u.bug("end drawing: x=" + this._cx + ", y=" + this._cy);
 
-				this._context.closePath();
+					this.activeElement._context.closePath();
 
-				this.paths.paths.push(0);
-				this.paths.x_paths.push(u.round(this._cx/this._factor_x, 3));
-				this.paths.y_paths.push(u.round(this._cy/this._factor_y, 3));
+					this.activeElement.paths.paths.push(0);
+					this.activeElement.paths.x_paths.push(u.round(this.activeElement._cx/this.activeElement._factor_x, 3));
+					this.activeElement.paths.y_paths.push(u.round(this.activeElement._cy/this.activeElement._factor_y, 3));
 
-//				u.e.removeMoveEvent(this, this.scene._draw);
+//					u.e.removeMoveEvent(this.activeElement, this.activeElement.scene._draw);
+					u.e.removeMoveEvent(this, this._draw);
 
-				this._input.value = encodeURIComponent(JSON.stringify(this.paths));
+					this.activeElement._input.value = encodeURIComponent(JSON.stringify(this.activeElement.paths));
 
 
-				this.scene.validateSignature();
+					this.activeElement.scene.validateSignature();
+
+					this.activeElement = false;
+
+				}
+
+
+
+// 				this._cx = this._bx;
+// 				this._cy = this._by;
+//
+// //				u.bug("end drawing: x=" + this._cx + ", y=" + this._cy);
+//
+// 				this._context.closePath();
+//
+// 				this.paths.paths.push(0);
+// 				this.paths.x_paths.push(u.round(this._cx/this._factor_x, 3));
+// 				this.paths.y_paths.push(u.round(this._cy/this._factor_y, 3));
+//
+// 				u.e.removeMoveEvent(this, this.scene._draw);
+//
+// 				this._input.value = encodeURIComponent(JSON.stringify(this.paths));
+//
+//
+// 				this.scene.validateSignature();
 
 			}
 
@@ -195,20 +225,38 @@ Util.Objects["signature"] = new function() {
 
 				u.e.kill(event);
 
-				this._cx = u.eventX(event)-this._offsetLeft;
-				this._cy = u.eventY(event)-this._offsetTop;
+				if(this.activeElement) {
 
-				this._bx = this._cx;
-				this._by = this._cy;
+					this.activeElement._cx = u.eventX(event)-this.activeElement._offsetLeft;
+					this.activeElement._cy = u.eventY(event)-this.activeElement._offsetTop;
 
-//				u.bug("drawing in progress: x=" + this._cx + " ("+u.round(this._cx/this._factor_x, 3)+", "+this._factor_x+"), y=" + this._cy + " ("+u.round(this._cy/this._factor_y, 3)+", "+this._factor_y+")");
+					this.activeElement._bx = this.activeElement._cx;
+					this.activeElement._by = this.activeElement._cy;
 
-				this._context.lineTo(this._cx, this._cy);
-				this._context.stroke();
+	//				u.bug("drawing in progress: x=" + this._cx + " ("+u.round(this._cx/this._factor_x, 3)+", "+this._factor_x+"), y=" + this._cy + " ("+u.round(this._cy/this._factor_y, 3)+", "+this._factor_y+")");
 
-				this.paths.paths.push(this._context.strokeStyle);
-				this.paths.x_paths.push(u.round(this._cx/this._factor_x, 3));
-				this.paths.y_paths.push(u.round(this._cy/this._factor_y, 3));
+					this.activeElement._context.lineTo(this.activeElement._cx, this.activeElement._cy);
+					this.activeElement._context.stroke();
+
+					this.activeElement.paths.paths.push(this.activeElement._context.strokeStyle);
+					this.activeElement.paths.x_paths.push(u.round(this.activeElement._cx/this.activeElement._factor_x, 3));
+					this.activeElement.paths.y_paths.push(u.round(this.activeElement._cy/this.activeElement._factor_y, 3));
+
+				}
+// 				this._cx = u.eventX(event)-this._offsetLeft;
+// 				this._cy = u.eventY(event)-this._offsetTop;
+//
+// 				this._bx = this._cx;
+// 				this._by = this._cy;
+//
+// //				u.bug("drawing in progress: x=" + this._cx + " ("+u.round(this._cx/this._factor_x, 3)+", "+this._factor_x+"), y=" + this._cy + " ("+u.round(this._cy/this._factor_y, 3)+", "+this._factor_y+")");
+//
+// 				this._context.lineTo(this._cx, this._cy);
+// 				this._context.stroke();
+//
+// 				this.paths.paths.push(this._context.strokeStyle);
+// 				this.paths.x_paths.push(u.round(this._cx/this._factor_x, 3));
+// 				this.paths.y_paths.push(u.round(this._cy/this._factor_y, 3));
 
 			}
 
@@ -265,9 +313,9 @@ Util.Objects["signature"] = new function() {
 
 			// drawing controls
 			u.e.addStartEvent(this.canvas_date, this._beginDrawing);
-			u.e.addEndEvent(this.canvas_date, this._endDrawing);
+//			u.e.addEndEvent(this.canvas_date, this._endDrawing);
 			if(u.e.event_pref == "mouse") {
-				u.e.addEvent(this.canvas_date, "mouseout", this._endDrawing);
+//				u.e.addEvent(this.canvas_date, "mouseout", this._endDrawing);
 			}
 
 
@@ -327,11 +375,14 @@ Util.Objects["signature"] = new function() {
 
 			// drawing controls
 			u.e.addStartEvent(this.canvas_signature, this._beginDrawing);
-			u.e.addEndEvent(this.canvas_signature, this._endDrawing);
+//			u.e.addEndEvent(this.canvas_signature, this._endDrawing);
 			if(u.e.event_pref == "mouse") {
-				u.e.addEvent(this.canvas_signature, "mouseout", this._endDrawing);
+//				u.e.addEvent(this.canvas_signature, "mouseout", this._endDrawing);
 			}
 
+
+			// end drawing event on scene
+			u.e.addEndEvent(this, this._endDrawing);
 
 
 			this.canvas_reset = u.ae(this.actions, "li", {"class":"reset", "html":"Slet"});

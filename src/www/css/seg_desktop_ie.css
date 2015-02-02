@@ -133,6 +133,7 @@ dt {display: inline-block; vertical-align: top; text-transform: uppercase; color
 #footer .about {width:740px; margin:0 auto; position: relative;	padding-bottom: 20px;
 	background: url("/img/logo.png") no-repeat; background-position: 615px 0px;
 }
+body.error #footer .about {background: none;}
 #footer .about p {color: #ffffff; font-size: 26px; font-family: 'Circular', Arial, sans-serif; font-weight: bold; font-style:italic;}
 #footer .about ul.contacts {display:block; width:100%; font-size: 1rem; }
 #footer .about ul.contacts li.contact {width:200px;}
@@ -150,7 +151,8 @@ dt {display: inline-block; vertical-align: top; text-transform: uppercase; color
 /*s-declaration-desktop.css*/
 body.declaration {background: #e8e8e8;}
 body.declaration #header {display: none;}
-body.declaration #content .scene {width: 737px; padding: 50px 20px 70px; margin: 0 auto; position: relative; background: #ffffff;}
+body.declaration #content .scene,
+body.error #content .scene {width: 737px; padding: 50px 20px 70px; margin: 0 auto; position: relative; background: #ffffff;}
 body.declaration #content .scene h1 {padding: 0 0 10px; font-size: 20px; text-align: center;
 	font-family: 'Circular', Arial,sans-serif; text-transform: uppercase;
 }
