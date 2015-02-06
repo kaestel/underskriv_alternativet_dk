@@ -5,6 +5,7 @@ document.write('<script type="text/javascript" src="/js/manipulator/src/u-geomet
 document.write('<script type="text/javascript" src="/js/manipulator/src/u-events.js"></script>');
 document.write('<script type="text/javascript" src="/js/manipulator/src/u-events-movements.js"></script>');
 document.write('<script type="text/javascript" src="/js/manipulator/src/u-events-browser.js"></script>');
+document.write('<script type="text/javascript" src="/js/manipulator/src/u-system.js"></script>');
 
 document.write('<script type="text/javascript" src="/js/lib/u-form-custom.js"></script>');
 
