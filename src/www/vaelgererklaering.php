@@ -34,9 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 // print PDF
 else if(count($action) == 2 && $action[0] == "print") {
 
-//		$page->header();
 	$page->template("declaration/print.php");
-//		$page->footer();
 	exit();
 
 
@@ -63,12 +61,7 @@ if(count($action) == 1) {
 		$page->page(array(
 			"templates" => "declaration/signature.php"
 		));
-
-		// $page->header();
-		// $page->template("declaration/signature.php");
-		// $page->footer();
 		exit();
-
 	}
 	// preview declaration
 	else if($action[0] == "preview") {
@@ -76,12 +69,7 @@ if(count($action) == 1) {
 		$page->page(array(
 			"templates" => "declaration/preview.php"
 		));
-
-		// $page->header();
-		// $page->template("declaration/preview.php");
-		// $page->footer();
 		exit();
-
 	}
 	// receipt
 	else if($action[0] == "receipt") {
@@ -89,11 +77,7 @@ if(count($action) == 1) {
 		$page->page(array(
 			"templates" => "declaration/receipt.php"
 		));
-		// $page->header();
-		// $page->template("declaration/receipt.php");
-		// $page->footer();
 		exit();
-
 	}
 	// error
 	else if($action[0] == "error") {
@@ -101,11 +85,7 @@ if(count($action) == 1) {
 		$page->page(array(
 			"templates" => "declaration/error.php"
 		));
-		// $page->header();
-		// $page->template("declaration/receipt.php");
-		// $page->footer();
 		exit();
-
 	}
 	// save data and perform print action (redirects to receipt or error)
 	else if($action[0] == "save") {
@@ -120,13 +100,6 @@ if(count($action) == 1) {
 $page->page(array(
 	"templates" => "declaration/start.php"
 ));
-
-// $page->header();
-// $page->template("declaration/start.php");
-// $page->footer();
-
-//header("Location: /".$slug);
 exit();
-
 
 ?>
