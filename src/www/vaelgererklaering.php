@@ -44,7 +44,8 @@ else if(count($action) == 2 && $action[0] == "print") {
 // no session data OR bad slug
 else if(!session()->value("signature_id") || !session()->value("slug") || array_search(session()->value("slug"), $slug_data) == -1) {
 
-	header("Location: /");
+	print "this is the problem";
+//	header("Location: /");
 	exit();
 
 }
@@ -97,9 +98,10 @@ if(count($action) == 1) {
 }
 
 // back to personal data form (with slug already set)
-$page->page(array(
-	"templates" => "declaration/start.php"
-));
+print "other option";
+// $page->page(array(
+// 	"templates" => "declaration/start.php"
+// ));
 exit();
 
 ?>
