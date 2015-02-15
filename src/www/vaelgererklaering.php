@@ -45,8 +45,9 @@ else if(count($action) == 2 && $action[0] == "print") {
 else if(!session()->value("signature_id") || !session()->value("slug") || array_search(session()->value("slug"), $slug_data) == -1) {
 
 	print "this is the problem<br>";
-	print session()->value("signature_id")."<br>";
-	print session()->value("slug")."<br>";
+	session()->value("slug", "test");
+	print "#".session()->value("signature_id")."<br>";
+	print "#".session()->value("slug")."<br>";
 	print array_search(session()->value("slug"), $slug_data) . "<br>";
 	print_r($slug_data);
 
