@@ -4,8 +4,9 @@ if(isset($read_access) && $read_access) {
 	return;
 }
 
-header('P3P: CP="NOI ADM DEV COM NAV OUR STP"');
+session_set_cookie_params(3600, '/', "underskriv.alternativet.dk");
 include_once($_SERVER["FRAMEWORK_PATH"]."/config/init.php");
+
 
 $action = $page->actions();
 
