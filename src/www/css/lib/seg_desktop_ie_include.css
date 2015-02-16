@@ -3,3 +3,5 @@
 @import url(/css/lib/desktop/s-page-desktop.css);
 @import url(/css/lib/desktop/s-footer-desktop.css);
 @import url(/css/lib/desktop/s-declaration-desktop.css);
+
+@import url(/css/lib/desktop_ie/s-content-desktop_ie.css);

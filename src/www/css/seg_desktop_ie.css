@@ -262,3 +262,7 @@ body.declaration #content .scene.receipt h3 {font-size: 16px; text-align: center
 body.declaration #content .scene.receipt p.regards {padding: 27px 0 9px;}
 body.declaration #content .scene.receipt .actions li a {font-size: 16px; text-decoration: underline;}
 
+
+/*s-content-desktop_ie.css*/
+body.declaration #content .scene ul.actions li.reset {line-height: 12px;}
+
