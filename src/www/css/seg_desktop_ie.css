@@ -237,7 +237,7 @@ body.declaration #content .scene.signature {padding-bottom: 40px;}
 #content .scene.signature p {padding: 0 0 30px; font-size: 13px; text-align: center;}
 body.declaration #content .scene ul.actions li.reset {background: #000000; color: #00ff00; padding: 10px 20px; font-size: 14px; display: inline-block; cursor: pointer; font-family: 'Circular', Arial,sans-serif; text-transform: uppercase; font-weight:bold; margin-right: 10px;}
 @media all and (-webkit-min-device-pixel-ratio:0) {
-	body.declaration #content .scene ul.actions li.reset {line-height: 12px;}
+	body.declaration #content .scene ul.actions li.reset {}
 }
 body.declaration #content .scene ul.actions li.reset:hover {background: #00ff00; color: #000000;}
 #content .scene.signature div.input {padding: 0 0 30px; display: none; position: relative;}
@@ -267,5 +267,5 @@ body.declaration #content .scene.receipt .actions li a {font-size: 16px; text-de
 
 
 /*s-content-desktop_ie.css*/
-body.declaration #content .scene ul.actions li.reset {line-height: 12px;}
+body.declaration #content .scene ul.actions li.reset {}
 
